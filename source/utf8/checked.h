@@ -118,7 +118,7 @@ namespace utf8
                     utf8::append (replacement, out);
                     ++start;
                     // just one replacement mark for the sequence
-                    while (utf8::internal::is_trail(*start) && start != end)
+                    while (start != end && utf8::internal::is_trail(*start))
                         ++start;
                     break;
             }
