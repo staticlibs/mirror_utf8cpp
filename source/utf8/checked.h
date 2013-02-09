@@ -109,13 +109,13 @@ namespace utf8
                 case internal::NOT_ENOUGH_ROOM:
                     throw not_enough_room();
                 case internal::INVALID_LEAD:
-                    utf8::append (replacement, out);
+                    out = utf8::append (replacement, out);
                     ++start;
                     break;
                 case internal::INCOMPLETE_SEQUENCE:
                 case internal::OVERLONG_SEQUENCE:
                 case internal::INVALID_CODE_POINT:
-                    utf8::append (replacement, out);
+                    out = utf8::append (replacement, out);
                     ++start;
                     // just one replacement mark for the sequence
                     while (start != end && utf8::internal::is_trail(*start))
