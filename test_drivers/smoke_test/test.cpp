@@ -10,16 +10,16 @@ int main()
     //append
     unsigned char u[5] = {0,0,0,0,0};
 
-    unsigned char* end = append(0x0448, u);
+    append(0x0448, u);
     assert (u[0] == 0xd1 && u[1] == 0x88 && u[2] == 0 && u[3] == 0 && u[4] == 0);
 
-    end = append(0x65e5, u);
+    append(0x65e5, u);
     assert (u[0] == 0xe6 && u[1] == 0x97 && u[2] == 0xa5 && u[3] == 0 && u[4] == 0);
 
-    end = append(0x3044, u);
+    append(0x3044, u);
     assert (u[0] == 0xe3 && u[1] == 0x81 && u[2] == 0x84 && u[3] == 0 && u[4] == 0);
 
-    end = append(0x10346, u);
+    append(0x10346, u);
     assert (u[0] == 0xf0 && u[1] == 0x90 && u[2] == 0x8d && u[3] == 0x86 && u[4] == 0);
 
 
@@ -183,13 +183,13 @@ int main()
 
     //append
     memset(u, 0, 5);
-    end = unchecked::append(0x0448, u);
+    append(0x0448, u);
     assert (u[0] == 0xd1 && u[1] == 0x88 && u[2] == 0 && u[3] == 0 && u[4] == 0);
 
-    end = unchecked::append(0x65e5, u);
+    append(0x65e5, u);
     assert (u[0] == 0xe6 && u[1] == 0x97 && u[2] == 0xa5 && u[3] == 0 && u[4] == 0);
 
-    end = unchecked::append(0x10346, u);
+    append(0x10346, u);
     assert (u[0] == 0xf0 && u[1] == 0x90 && u[2] == 0x8d && u[3] == 0x86 && u[4] == 0);
 
     //next
